@@ -3,10 +3,10 @@ apt update && apt install curl sudo lsb-release iptables -y
 echo "deb http://deb.debian.org/debian $(lsb_release -sc)-backports main" | sudo tee /etc/apt/sources.list.d/backports.list
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N -6 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
-wget -N -6 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wireguard-go
+wget -N -6 https://github.com/ViRb3/wgcf/releases/latest/download/wgcf_2.2.3_linux_amd64
+wget -N -6 https://github.com/bernardkkt/wg-go-builder/releases/latest/download/wireguard-go
 cp wireguard-go /usr/bin
-cp wgcf /usr/local/bin/wgcf
+cp wgcf* /usr/local/bin/wgcf
 chmod +x /usr/local/bin/wgcf
 chmod +x /usr/bin/wireguard-go
 echo | wgcf register
